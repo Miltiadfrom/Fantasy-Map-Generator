@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мое приложение</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Шапка -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">Мое приложение</a>
+      <ul class="nav__menu">
+        <li><a href="#" class="nav__link nav__link--active">Главная</a></li>
+        <li><a href="#about" class="nav__link">О нас</a></li>
+        <li><a href="#services" class="nav__link">Услуги</a></li>
+        <li><a href="#contacts" class="nav__link">Контакты</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Открыть меню">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Главный экран -->
+    <section class="hero">
+      <h1 class="hero__title">Добро пожаловать!</h1>
+      <p class="hero__subtitle">Простой и удобный сервис для ваших задач.</p>
+      <a href="#contacts" class="btn btn--primary">Начать</a>
+      <a href="#about" class="btn btn--secondary">Подробнее</a>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="section">
+      <h2 class="section__title">О нас</h2>
+      <p>Мы — команда профессионалов, которая создает удобные решения. Наша цель — сделать ваш опыт максимально комфортным.</p>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="section">
+      <h2 class="section__title">Услуги</h2>
+      <div class="cards">
+        <article class="card">
+          <h3 class="card__title">Разработка</h3>
+          <p class="card__text">Создание современных веб-приложений любой сложности.</p>
+          <a href="#contacts" class="btn btn--primary">Заказать</a>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Дизайн</h3>
+          <p class="card__text">Продуманный интерфейс, который приятно использовать.</p>
+          <a href="#contacts" class="btn btn--primary">Заказать</a>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Поддержка</h3>
+          <p class="card__text">Поможем на каждом этапе — от запуска до развития.</p>
+          <a href="#contacts" class="btn btn--primary">Заказать</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section id="contacts" class="section">
+      <h2 class="section__title">Свяжитесь с нами</h2>
+      <form class="form" action="#" method="post">
+        <label class="form__label" for="name">Имя:</label>
+        <input class="form__input" type="text" id="name" name="name" placeholder="Введите ваше имя" required />
+
+        <label class="form__label" for="email">Электронная почта:</label>
+        <input class="form__input" type="email" id="email" name="email" placeholder="Введите вашу почту" required />
+
+        <label class="form__label" for="message">Сообщение:</label>
+        <textarea class="form__input" id="message" name="message" rows="5" placeholder="Введите ваше сообщение"></textarea>
+
+        <button type="submit" class="btn btn--primary">Отправить</button>
+        <p class="form__note">Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <p>&copy; 2026 Мое приложение. Все права защищены.</p>
+    <a href="#" class="footer__link">Политика конфиденциальности</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
