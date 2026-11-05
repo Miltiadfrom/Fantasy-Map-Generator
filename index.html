@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Мое приложение</title>
+  <title>Родмур — Мир Повести о Родмуре</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Шапка -->
   <header class="header">
     <nav class="nav">
-      <a href="#" class="nav__logo">Мое приложение</a>
+      <a href="#" class="nav__logo">⚔️ Родмур</a>
       <ul class="nav__menu">
-        <li><a href="#" class="nav__link nav__link--active">Главная</a></li>
-        <li><a href="#about" class="nav__link">О нас</a></li>
-        <li><a href="#services" class="nav__link">Услуги</a></li>
+        <li><a href="#world" class="nav__link nav__link--active">Мир</a></li>
+        <li><a href="#races" class="nav__link">Расы и культуры</a></li>
+        <li><a href="#generator" class="nav__link">Генератор названий</a></li>
         <li><a href="#contacts" class="nav__link">Контакты</a></li>
       </ul>
       <button class="nav__toggle" aria-label="Открыть меню">☰</button>
@@ -23,39 +23,30 @@
 
   <main>
     <!-- Главный экран -->
-    <section class="hero">
-      <h1 class="hero__title">Добро пожаловать!</h1>
-      <p class="hero__subtitle">Простой и удобный сервис для ваших задач.</p>
-      <a href="#contacts" class="btn btn--primary">Начать</a>
-      <a href="#about" class="btn btn--secondary">Подробнее</a>
+    <section id="world" class="hero">
+      <h1 class="hero__title">Повесть о Родмуре</h1>
+      <p class="hero__subtitle">Шесть рас, шесть культур, одна история. Открой для себя земли людей, эльфов, гномов, тёмных эльфов, орков и гоблинов.</p>
+      <a href="#races" class="btn btn--primary">Изучить культуры</a>
+      <a href="#generator" class="btn btn--secondary">Генератор названий</a>
     </section>
 
-    <!-- О нас -->
-    <section id="about" class="section">
-      <h2 class="section__title">О нас</h2>
-      <p>Мы — команда профессионалов, которая создает удобные решения. Наша цель — сделать ваш опыт максимально комфортным.</p>
+    <!-- Рассы (плитки рас) -->
+    <section id="races" class="section">
+      <h2 class="section__title">Расы и культуры Родмура</h2>
+      <div class="race-tabs" id="raceTabs"><!-- кнопки рас генерируются из cultures.js --></div>
+      <div class="culture-card" id="cultureCard"><!-- карточка культуры --></div>
     </section>
 
-    <!-- Услуги -->
-    <section id="services" class="section">
-      <h2 class="section__title">Услуги</h2>
-      <div class="cards">
-        <article class="card">
-          <h3 class="card__title">Разработка</h3>
-          <p class="card__text">Создание современных веб-приложений любой сложности.</p>
-          <a href="#contacts" class="btn btn--primary">Заказать</a>
-        </article>
-        <article class="card">
-          <h3 class="card__title">Дизайн</h3>
-          <p class="card__text">Продуманный интерфейс, который приятно использовать.</p>
-          <a href="#contacts" class="btn btn--primary">Заказать</a>
-        </article>
-        <article class="card">
-          <h3 class="card__title">Поддержка</h3>
-          <p class="card__text">Поможем на каждом этапе — от запуска до развития.</p>
-          <a href="#contacts" class="btn btn--primary">Заказать</a>
-        </article>
+    <!-- Генератор названий -->
+    <section id="generator" class="section">
+      <h2 class="section__title">Генератор названий на русском</h2>
+      <p class="section__note">Все названия стран и городов создаются по русским словообразовательным моделям — без английских слов.</p>
+      <div class="gen-controls">
+        <label class="gen-label" for="genRace">Раса:</label>
+        <select class="gen-select" id="genRace"></select>
+        <button type="button" class="btn btn--primary" id="genBtn">Сгенерировать</button>
       </div>
+      <div class="gen-result" id="genResult" hidden></div>
     </section>
 
     <!-- Форма обратной связи -->
@@ -69,7 +60,7 @@
         <input class="form__input" type="email" id="email" name="email" placeholder="Введите вашу почту" required />
 
         <label class="form__label" for="message">Сообщение:</label>
-        <textarea class="form__input" id="message" name="message" rows="5" placeholder="Введите ваше сообщение"></textarea>
+        <textarea class="form__input" id="message" name="message" rows="5" placeholder="Напишите о мирах и культурах, которые хотите добавить в Родмур"></textarea>
 
         <button type="submit" class="btn btn--primary">Отправить</button>
         <p class="form__note">Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности.</p>
@@ -79,10 +70,11 @@
 
   <!-- Подвал -->
   <footer class="footer">
-    <p>&copy; 2026 Мое приложение. Все права защищены.</p>
+    <p>&copy; 2026 «Родмур». Фанатский мир по мотивам «Повести о Родмуре». Все права защищены.</p>
     <a href="#" class="footer__link">Политика конфиденциальности</a>
   </footer>
 
+  <script src="cultures.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
