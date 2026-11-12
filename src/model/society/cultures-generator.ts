@@ -412,144 +412,125 @@ class CulturesGenerator {
     }
 
     if (options.map.cultures.set === "highFantasy") {
+      // cultures of the world of the "Tale of Rodmur", all names in Russian
       return [
-        // fantasy races
+        // humans
         {
-          name: "Quenian",
-          ancestry: "Elfish",
-          base: 33,
-          odd: 1,
-          sort: (i: number) => (n(i) / bd(i, [6, 7, 8, 9], 10)) * t[i],
-          shield: "gondor"
-        }, // Elves
-        {
-          name: "Eldar",
-          ancestry: "Elfish",
-          base: 33,
-          odd: 1,
-          sort: (i: number) => (n(i) / bd(i, [6, 7, 8, 9], 10)) * t[i],
-          shield: "noldor"
-        }, // Elves
-        {
-          name: "Trow",
-          ancestry: "Dark Elfish",
-          base: 34,
-          odd: 0.9,
-          sort: (i: number) => (n(i) / bd(i, [7, 8, 9, 12], 10)) * t[i],
-          shield: "hessen"
-        }, // Dark Elves
-        {
-          name: "Lothian",
-          ancestry: "Dark Elfish",
-          base: 34,
-          odd: 0.3,
-          sort: (i: number) => (n(i) / bd(i, [7, 8, 9, 12], 10)) * t[i],
-          shield: "wedged"
-        }, // Dark Elves
-        {
-          name: "Dunirr",
-          ancestry: "Dwarven",
-          base: 35,
-          odd: 1,
-          sort: (i: number) => n(i) + h[i],
-          shield: "ironHills"
-        }, // Dwarfs
-        {
-          name: "Khazadur",
-          ancestry: "Dwarven",
-          base: 35,
-          odd: 1,
-          sort: (i: number) => n(i) + h[i],
-          shield: "erebor"
-        }, // Dwarfs
-        {
-          name: "Kobold",
-          ancestry: "Goblin",
-          base: 36,
-          odd: 1,
-          sort: (i: number) => t[i] - s[i],
-          shield: "moriaOrc"
-        }, // Goblin
-        {
-          name: "Uruk",
-          ancestry: "Orkish",
-          base: 37,
-          odd: 1,
-          sort: (i: number) => h[i] * t[i],
-          shield: "urukHai"
-        }, // Orc
-        {
-          name: "Ugluk",
-          ancestry: "Orkish",
-          base: 37,
-          odd: 0.5,
-          sort: (i: number) => (h[i] * t[i]) / bd(i, [1, 2, 10, 11]),
-          shield: "moriaOrc"
-        }, // Orc
-        {
-          name: "Yotunn",
-          ancestry: "Giants",
-          base: 38,
-          odd: 0.7,
-          sort: (i: number) => td(i, -10),
-          shield: "pavise"
-        }, // Giant
-        {
-          name: "Rake",
-          ancestry: "Drakonic",
-          base: 39,
-          odd: 0.7,
-          sort: (i: number) => -s[i],
-          shield: "fantasy2"
-        }, // Draconic
-        {
-          name: "Arago",
-          ancestry: "Arachnid",
-          base: 40,
-          odd: 0.7,
-          sort: (i: number) => t[i] - s[i],
-          shield: "horsehead2"
-        }, // Arachnid
-        {
-          name: "Aj'Snaga",
-          ancestry: "Serpents",
-          base: 41,
-          odd: 0.7,
-          sort: (i: number) => n(i) / bd(i, [12], 10),
-          shield: "fantasy1"
-        }, // Serpents
-        // fantasy human
-        {
-          name: "Anor",
-          ancestry: "Human",
-          base: 32,
+          name: "Кейморцы",
+          ancestry: "Люди",
+          base: RODMUR_HUMAN,
           odd: 1,
           sort: (i: number) => n(i) / td(i, 10),
           shield: "fantasy5"
         },
         {
-          name: "Dail",
-          ancestry: "Human",
-          base: 32,
+          name: "Эргодольцы",
+          ancestry: "Люди",
+          base: RODMUR_HUMAN,
           odd: 1,
           sort: (i: number) => n(i) / td(i, 13),
           shield: "roman"
         },
         {
-          name: "Rohand",
-          ancestry: "Human",
-          base: 16,
+          name: "Ансалатцы",
+          ancestry: "Люди",
+          base: RODMUR_HUMAN,
           odd: 1,
           sort: (i: number) => n(i) / td(i, 16),
           shield: "round"
         },
         {
-          name: "Dulandir",
-          ancestry: "Human",
-          base: 31,
+          name: "Имперцы Туриана",
+          ancestry: "Люди",
+          base: RODMUR_HUMAN,
           odd: 1,
           sort: (i: number) => (n(i) / td(i, 5) / bd(i, [2, 4, 10], 7)) * t[i],
           shield: "easterling"
+        },
+        // elves
+        {
+          name: "Лориэнские эльфы",
+          ancestry: "Эльфы",
+          base: RODMUR_ELVEN,
+          odd: 1,
+          sort: (i: number) => (n(i) / bd(i, [6, 7, 8, 9], 10)) * t[i],
+          shield: "gondor"
+        },
+        {
+          name: "Сильванэли",
+          ancestry: "Эльфы",
+          base: RODMUR_ELVEN,
+          odd: 1,
+          sort: (i: number) => (n(i) / bd(i, [6, 7, 8, 9], 10)) * t[i],
+          shield: "noldor"
+        },
+        // dark elves (drow)
+        {
+          name: "Дрови Иллитивара",
+          ancestry: "Тёмные эльфы",
+          base: RODMUR_DARK_ELVEN,
+          odd: 0.9,
+          sort: (i: number) => (n(i) / bd(i, [7, 8, 9, 12], 10)) * t[i],
+          shield: "hessen"
+        },
+        {
+          name: "Ш'ласские пауки",
+          ancestry: "Тёмные эльфы",
+          base: RODMUR_DARK_ELVEN,
+          odd: 0.3,
+          sort: (i: number) => (n(i) / bd(i, [7, 8, 9, 12], 10)) * t[i],
+          shield: "wedged"
+        },
+        // dwarves
+        {
+          name: "Карадронские гномы",
+          ancestry: "Гномы",
+          base: RODMUR_DWARVEN,
+          odd: 1,
+          sort: (i: number) => n(i) + h[i],
+          shield: "ironHills"
+        },
+        {
+          name: "Хир-Гурдоль",
+          ancestry: "Гномы",
+          base: RODMUR_DWARVEN,
+          odd: 1,
+          sort: (i: number) => n(i) + h[i],
+          shield: "erebor"
+        },
+        // orcs
+        {
+          name: "Орки Клыка",
+          ancestry: "Орки",
+          base: RODMUR_ORC,
+          odd: 1,
+          sort: (i: number) => h[i] * t[i],
+          shield: "urukHai"
+        },
+        {
+          name: "Орки Хламора",
+          ancestry: "Орки",
+          base: RODMUR_ORC,
+          odd: 0.5,
+          sort: (i: number) => (h[i] * t[i]) / bd(i, [1, 2, 10, 11]),
+          shield: "moriaOrc"
+        },
+        // goblins
+        {
+          name: "Гоблины Топей",
+          ancestry: "Гоблины",
+          base: RODMUR_GOBLIN,
+          odd: 1,
+          sort: (i: number) => t[i] - s[i],
+          shield: "moriaOrc"
+        },
+        {
+          name: "Инженеры Гзбарта",
+          ancestry: "Гоблины",
+          base: RODMUR_GOBLIN,
+          odd: 0.7,
+          sort: (i: number) => t[i] - s[i],
+          shield: "horsehead2"
         }
       ];
     }
